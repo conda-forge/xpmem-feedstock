@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   version: "2.7.4"
-  buildnum: 0
+  buildnum: 1
 
 package:
   name: xpmem
@@ -20,6 +20,8 @@ build:
     - win
 
 requirements:
+  run_exports:
+    - ${{ pin_subpackage('xpmem', upper_bound='x') }}
   build:
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
